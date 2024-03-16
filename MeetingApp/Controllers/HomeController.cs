@@ -15,7 +15,9 @@ namespace MeetingApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            int hour = DateTime.Now.Hour;
+            string desc = hour > 12 ? "Ýyi Günler" : "Günaydýn";
+            return View(model : desc); // string olarak deðilde model olarak gönderiyoruz.
         }
 
         public IActionResult Privacy()
